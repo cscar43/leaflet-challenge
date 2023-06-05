@@ -1,5 +1,5 @@
 // Initialize map and set the center and zoom level
-var myMap = L.map("map", {
+let myMap = L.map("map", {
     center: [44.09, -95.71],
     zoom: 4
   });
@@ -17,17 +17,17 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
 
     // Iterate over earthquake data
     earthquakes.forEach(function (earthquake) {
-      var magnitude = earthquake.properties.mag;
-      var depth = earthquake.geometry.coordinates[2];
-      var latitude = earthquake.geometry.coordinates[1];
-      var longitude = earthquake.geometry.coordinates[0];
+      let magnitude = earthquake.properties.mag;
+      let depth = earthquake.geometry.coordinates[2];
+      let latitude = earthquake.geometry.coordinates[1];
+      let longitude = earthquake.geometry.coordinates[0];
 
       // Define marker size and color based on magnitude and depth
-      var markerSize = magnitude * 4;
-      var markerColor = getColorForDepth(depth);
+      let markerSize = magnitude * 4;
+      let markerColor = getColorForDepth(depth);
 
       // Create marker and bind popup
-      var marker = L.circleMarker([latitude, longitude], {
+      let marker = L.circleMarker([latitude, longitude], {
         radius: markerSize,
         fillColor: markerColor,
         color: '#000',
@@ -40,10 +40,10 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     });
 
     // Create a legend control
-    var legend = L.control({ position: 'bottomright' });
+    let legend = L.control({ position: 'bottomright' });
 
     legend.onAdd = function (myMap) {
-        var div = L.DomUtil.create('div', 'legend');
+      let div = L.DomUtil.create('div', 'legend');
         div.innerHTML += '<h4>Depth Legend</h4>';
         div.innerHTML += '<div class="legend-item"><span class="legend-color" style="background: #008000"></span> -10 - 10</div>';
         div.innerHTML += '<div class="legend-item"><span class="legend-color" style="background: #FFFF00"></span> 10 - 30</div>';
