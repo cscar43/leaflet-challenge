@@ -10,6 +10,9 @@ This project is a web-based visualization of earthquake data using Leaflet, D3, 
 - Popups display information about each earthquake, including magnitude, depth, place, and time.
 - Legend provides a visual guide to interpreting marker colors and their corresponding depth ranges.
 
+## Github Pages Link
+-https://cscar43.github.io/leaflet-challenge/
+
 ## Technologies Used
 
 - Leaflet: Used for creating and displaying the interactive map.
